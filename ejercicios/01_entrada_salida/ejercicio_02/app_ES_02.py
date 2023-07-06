@@ -28,7 +28,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        nombre=prompt("UTN", "Escribe tu nombre")
+        alert("UTN", f"tu nombre es {nombre}")
+        
+        
+        
+        
         
         
     

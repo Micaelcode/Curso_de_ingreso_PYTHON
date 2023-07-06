@@ -32,9 +32,11 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
-
+      #use un insert para insertar la variable nombre en la caja de texto
     def btn_mostrar_on_click(self):
-        pass
+       nombre = prompt("UTN","Escribe tu nombre por favor")
+       self.txt_nombre.delete(0,10000)
+       self.txt_nombre.insert(0,nombre)
         
     
 if __name__ == "__main__":
