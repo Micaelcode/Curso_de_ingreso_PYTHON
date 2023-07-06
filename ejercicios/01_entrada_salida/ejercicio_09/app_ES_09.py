@@ -45,7 +45,7 @@ class App(customtkinter.CTk):
         resultado = valor_a * valor_b / 100
         resultado_final = valor_a + resultado
         resultado_int = int(resultado_final)
-        alert("utn",f"tu sueldo ahora es {resultado_int}")
+        alert("utn",f"tu sueldo ahora es de {resultado_int}")
     
 if __name__ == "__main__":
     app = App()
