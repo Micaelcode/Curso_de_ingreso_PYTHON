@@ -25,7 +25,7 @@ class App(customtkinter.CTk):
 
         self.title("UTN FRA")
         
-        self.label_meses = customtkinter.CTkLabel(master=self, text="Meses")
+        self.label_meses = customtkinter.CTkLabel(master=self, text="Invierno no?")
         self.label_meses.grid(row=0, column=0, padx=20, pady=10)
         meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
         self.combobox_mes = customtkinter.CTkComboBox(master=self, values=meses)
@@ -36,9 +36,43 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        mes = self.combobox_mes.get()
+        invierno="¡Abrigate que hace frio!"
+        no_invierno= "¡Falta para el invierno!"
+        paso_el_invierno="¡Ya pasó el invierno!"
+        
+        match(mes):
+             case "Enero":
+                 alert("Estacion",no_invierno)
+             case "Febrero":
+                 alert("Estacion",no_invierno)
+             case "Marzo":
+                 alert("Estación",no_invierno)        
+             case "Mayo":
+                 alert("Estación", no_invierno)
+             case "Abril":
+                 alert("Estación",no_invierno)
+             case "Junio":
+                 alert("Estación",invierno)
+             case "Julio":
+                 alert("Estación",invierno)
+             case "Agosto":
+                 alert("Estación", invierno)
+             case "Septiembre":
+                 alert("Estación",invierno)
+             case "Octubre":
+                 alert("Estación",paso_el_invierno)
+             case "Noviembre":
+                 alert("Estación", paso_el_invierno)
+             case "Diciembre":
+                 alert("Estación", paso_el_invierno)                            
     
     
+    
+    
+        
+        
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

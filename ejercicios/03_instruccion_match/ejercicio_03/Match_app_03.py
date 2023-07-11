@@ -24,7 +24,7 @@ class App(customtkinter.CTk):
         
         self.label_meses = customtkinter.CTkLabel(master=self, text="Meses")
         self.label_meses.grid(row=0, column=0, padx=20, pady=10)
-        meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+        meses = ['Octubre', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
         self.combobox_mes = customtkinter.CTkComboBox(master=self, values=meses)
         self.combobox_mes.grid(row=1, column=0, padx=20, pady=(10, 10))
         
@@ -33,8 +33,37 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        
+        mes= self.combobox_mes.get()
+        febrero="Este mes no tiene más de 29 dias"
+        no_febrero="Este mes tiene 30 días o más"
+        match (mes):
+            case "Octubre":
+                alert("Estación",no_febrero)
+            case "Febrero":
+                alert("Estación",febrero)
+            case "Marzo":
+                alert("Estación",no_febrero)        
+            case "Abril":
+                alert("Estación",no_febrero)
+            case "Mayo":
+                alert("Estación",no_febrero)
+            case "Junio":
+                alert("Estación",no_febrero)
+        
+            case "Julio":
+                alert("Estación",no_febrero)
+            case "Agosto":
+                alert("Estación",no_febrero)
+            case "Septiembre":
+                alert("Estación",no_febrero)
+            case "Octubre":
+                alert("Estación",no_febrero)
     
+            case "Noviembre":
+                alert("Estación",no_febrero)
+            case "Diciembre":
+                alert("Estación",no_febrero)
     
 if __name__ == "__main__":
     app = App()

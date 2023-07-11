@@ -29,8 +29,14 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
         
+         num = random.randrange(1,11) #numero final es excluyente
+         if num != 20: 
+             alert("utn", num)
+         
+         
+             
+          
 
 if __name__ == "__main__":
     app = App()
