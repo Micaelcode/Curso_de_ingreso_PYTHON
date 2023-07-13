@@ -34,32 +34,37 @@ class App(customtkinter.CTk):
         
         self.btn_informar = customtkinter.CTkButton(master=self, text="Informar", command=self.btn_informar_on_click)
         self.btn_informar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
-        
-    
+      
+   
     def btn_informar_on_click(self):
-        
+      
          mes = self.combobox_mes.get()
          enero="Que comiences bien el año¡¡¡"
          marzo="A clases¡¡"
          julio = "Se vienen las vacaciones¡¡"
          diciembre = "Felices fiestas¡¡"
-       
+         mensaje=None
+         
          match(mes):
             case "Enero":
-               alert("Meses", enero)
+               mensaje=enero
             case "Marzo":
-               alert("Meses",marzo)
+               mensaje=marzo
             case "Julio":
-               alert("Meses", julio)
+               mensaje=julio
             case "Diciembre":
-               alert("Meses", diciembre)   
-                          
-        
+               mensaje=diciembre
+               
+         if mensaje !=None:
+            alert("Meses", mensaje)
          
-        
-        
-        
-    
+         
+   
+         
+
+   
+   
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -5,6 +5,11 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+
+Nombre: Micael
+Apellido: Fernández
+
+
 Todas las lámparas están  al mismo precio de $800 pesos final.
 		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -38,9 +43,69 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        cantidad=self.combobox_cantidad.get()
+        cantidad=int(cantidad)
+        precio=800
+        precioSinDesc=precio*cantidad
+        marca=self.combobox_marca.get()
+        dialogo="el precio de tu compra es de ".capitalize()
+
+         
+        
+         
+    #A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
+      
+        if  cantidad >5:
+            porcentaje=50
+            
+        
+        
+            
+    # B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.       
+            
+            
+        elif cantidad == 5:
+            if marca=="ArgentinaLuz":
+                porcentaje=40
+            else:
+                porcentaje=30
         
     
+    #C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.     
+        elif cantidad== 4:
+            if marca=="ArgentinaLuz" or marca=="FelipeLamparas":
+                porcentaje=25
+            else:
+                porcentaje=20           
+            
+        
+        
+    #D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.   
+        
+        elif cantidad==3 :
+            if marca=="ArgentinaLuz":
+                porcentaje=15
+            elif marca=="FelipeLamparas":
+                porcentaje=10   
+            else:
+                porcentaje=5
+                
+        #comprando 1 o 2       
+        elif cantidad== 1 or cantidad==2:
+                porcentaje=0
+            
+            
+    #E.	Si el importe final con descuento suma más de $4000  se obtiene un descuento adicional de 5%.
+    
+        calculo=int(precioSinDesc - (precioSinDesc*porcentaje/100))
+        
+        if calculo >3999:
+            calculo=int(calculo - (calculo*5/100))
+        
+        alert("ferreteria iluminación", f"{dialogo} {calculo}").capitalize()
+      
+        
+      
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

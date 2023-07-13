@@ -42,33 +42,14 @@ class App(customtkinter.CTk):
         paso_el_invierno="¡Ya pasó el invierno!"
         
         match(mes):
-             case "Enero":
-                 alert("Estacion",no_invierno)
-             case "Febrero":
-                 alert("Estacion",no_invierno)
-             case "Marzo":
-                 alert("Estación",no_invierno)        
-             case "Mayo":
-                 alert("Estación", no_invierno)
-             case "Abril":
-                 alert("Estación",no_invierno)
-             case "Junio":
-                 alert("Estación",invierno)
-             case "Julio":
-                 alert("Estación",invierno)
-             case "Agosto":
-                 alert("Estación", invierno)
-             case "Septiembre":
-                 alert("Estación",invierno)
-             case "Octubre":
-                 alert("Estación",paso_el_invierno)
-             case "Noviembre":
-                 alert("Estación", paso_el_invierno)
-             case "Diciembre":
-                 alert("Estación", paso_el_invierno)                            
+            case "Enero"|"Febrero"|"Marzo"|"Mayo"|"Abril" :
+                mensaje=no_invierno
+            case "Junio"|"Julio"|"Agosto"|"Septiembre":
+                mensaje=invierno
+            case "Octubre"|"Noviembre"|"Diciembre":
+                mensaje=paso_el_invierno                            
     
-    
-    
+        alert("Invierno?",mensaje)
     
         
         
