@@ -52,7 +52,43 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estaciones=self.combobox_estaciones.get()
+        destinos=self.combobox_destino.get()
+        precio=15000
+        dialogo="Tu pasaje te sale"
+        
+        match(estaciones):
+            case "Invierno":
+                match(destinos):
+                    case "Bariloche":
+                        porcentaje=1.20
+                    case "Mar del plata":
+                        porcentaje=0.80
+                    case _ :
+                        porcentaje=0.90        
+            
+            case "Verano":
+                match(destinos):
+                    
+                    case "Bariloche":
+                        porcentaje=0.80
+                    case "Mar del plata":
+                        porcentaje=1.20
+                    case _ :
+                        porcentaje=1.10 
+        
+            case _:
+                match(destinos):
+                    case "Cordoba":
+                        porcentaje=1
+                    case _:
+                        porcentaje=1.10
+        
+        
+        calculo=int(precio*porcentaje)
+        mensaje=f"su viaje a {destinos} en esta estacion sale {calculo}"
+        alert("Pasajes Jorges",mensaje)
+        
             
     
 if __name__ == "__main__":

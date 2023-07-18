@@ -30,7 +30,20 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        hora=self.txt_hora.get()
+        hora=int(hora)
+        mensaje=None
+        match(hora):
+            case 7 | 8 | 9 | 10 | 11:
+                mensaje="Es de Mañana"
+            case _:
+                mensaje=None
+                
+        if mensaje != None:
+        
+            alert("reloj",mensaje)           
+        
+    
     
     
 if __name__ == "__main__":
