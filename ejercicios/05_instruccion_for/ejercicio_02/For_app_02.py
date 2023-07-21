@@ -23,9 +23,14 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass    
-       
-            
+        
+        numeros=[5,4,3,2,1]
+        
+        for num in numeros:
+            alert("utn",num)
+        
+        
+        
 
 if __name__ == "__main__":
     app = App()

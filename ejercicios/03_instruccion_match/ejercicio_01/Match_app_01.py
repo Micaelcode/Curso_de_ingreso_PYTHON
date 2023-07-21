@@ -6,6 +6,11 @@ import customtkinter
 
 
 '''
+micael
+fernandez
+
+
+
 Enunciado:
 Obtener el valor del mes seleccionado en el combobox_mes y  
 al presionar el botón Informar mostrar mediante alert los siguientes mensajes 

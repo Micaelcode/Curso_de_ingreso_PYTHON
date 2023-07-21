@@ -5,8 +5,13 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 
+
 '''
+micael 
+fernandez
+
 Enuciado:
+
 Al presionar el botón ‘Informar’ mostrar mediante alert los siguientes mensajes 
 en función del mes seleccionado:
     Si tiene 28 días

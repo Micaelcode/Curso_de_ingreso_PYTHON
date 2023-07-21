@@ -6,6 +6,9 @@ import customtkinter
 
 
 '''
+micael
+fernandez
+
 Enunciado:
 Al presionar el botón ‘Informar’ mostrar mediante alert los siguientes mensajes 
 en función del mes seleccionado:
